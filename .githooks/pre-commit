@@ -1,0 +1,31 @@
+#!/bin/sh
+# Checks formatting and lint on the GDScript files staged for this commit.
+# Install with: uv run scripts/dev.py hooks
+
+repo_root=$(git rev-parse --show-toplevel) || exit 1
+cd "$repo_root" || exit 1
+
+if command -v uv >/dev/null 2>&1; then
+	dev="uv run scripts/dev.py"
+else
+	dev="python scripts/dev.py"
+fi
+
+status=0
+
+if ! output=$($dev format-check --staged 2>&1); then
+	echo "$output"
+	echo
+	echo "pre-commit: staged GDScript is not formatted. Fix it with:"
+	echo "    $dev format"
+	status=1
+fi
+
+if ! output=$($dev lint --staged 2>&1); then
+	echo "$output"
+	echo
+	echo "pre-commit: gdlint rejected staged GDScript."
+	status=1
+fi
+
+exit $status

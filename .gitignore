@@ -1,0 +1,15 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# gdUnit4 test run output
+/reports/
+addons/gdUnit4/GdUnitRunner.cfg
+
+# Python / uv
+__pycache__/
+.venv/
+
+# OS noise
+.DS_Store
+Thumbs.db

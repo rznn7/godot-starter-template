@@ -1,0 +1,37 @@
+class-definitions-order:
+  - tools
+  - classnames
+  - extends
+  - signals
+  - enums
+  - consts
+  - exports
+  - pubvars
+  - prvvars
+  - onreadypubvars
+  - onreadyprvvars
+  - others
+class-name: '([A-Z][a-z0-9]*)+'
+class-load-variable-name: '([A-Z][a-z0-9]*)+'
+class-variable-name: '_?[a-z][a-z0-9]*(_[a-z0-9]+)*'
+constant-name: '[A-Z][A-Z0-9]*(_[A-Z0-9]+)*'
+disable:
+  - no-elif-return
+  - no-else-return
+  - unused-argument
+enum-element-name: '[A-Z][A-Z0-9]*(_[A-Z0-9]+)*'
+enum-name: '([A-Z][a-z0-9]*)+'
+function-arguments-number: 6
+function-name: '(_on_([A-Z][a-z0-9]*)+(_[a-z0-9]+)*|_?[a-z][a-z0-9]*(_[a-z0-9]+)*)'
+function-preload-variable-name: '([A-Z][a-z0-9]*)+'
+function-variable-name: '_?[a-z][a-z0-9]*(_[a-z0-9]+)*'
+load-constant-name: '([A-Z][a-z0-9]*)+'
+loop-variable-name: '_?[a-z][a-z0-9]*(_[a-z0-9]+)*'
+max-file-lines: 400
+max-line-length: 100
+max-public-methods: 20
+max-returns: 6
+signal-name: '[a-z][a-z0-9]*(_[a-z0-9]+)*'
+sub-class-name: '_?([A-Z][a-z0-9]*)+'
+tab-characters: 1
+trailing-comma: true
